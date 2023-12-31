@@ -1,0 +1,54 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #548687;
+  text-align: center;
+}
+
+.conatiner {
+  /* 70% of view port or screen and 1vh is equal to 1% of the viewport height. */
+  /* The viewport refers to the visible area of a web page in a web browser. 
+  It's the portion of the web page that users can see at any given time.
+    The size of the viewport depends on the device and the browser settings. */
+  height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.gameContainer {
+  /* 60% of 70vh as height */
+  /* 1vmin is equal to 1% of the smaller of the viewport's width or height. */
+  height: 60vmin;
+  width: 60vmin;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.box {
+  height: 18vmin;
+  width: 18vmin;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 1rem;
+  border: none;
+  cursor: pointer;
+  /* font-size: 8vmin; */
+  font-size: 55px;
+  color: #b0413e;
+}
+
+.reset-btn {
+  padding: 1rem;
+  border: none;
+  background-color: black;
+  color: white;
+  border-radius: 1rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
