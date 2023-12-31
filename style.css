@@ -41,6 +41,9 @@ body {
   /* font-size: 8vmin; */
   font-size: 55px;
   color: #b0413e;
+  /* when we disable a button it will take or page background-color so we will 
+  explicitly give background-color to all boxes */
+  background-color: #ffffc7;
 }
 
 .reset-btn {
@@ -51,4 +54,23 @@ body {
   border-radius: 1rem;
   font-size: 1.5rem;
   cursor: pointer;
+}
+.new-btn {
+  padding: 1rem;
+  border: none;
+  background-color: black;
+  color: white;
+  border-radius: 1rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.success-msg {
+  font-size: 35px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  color: #ffffc7;
+}
+.hide {
+  display: none;
 }
