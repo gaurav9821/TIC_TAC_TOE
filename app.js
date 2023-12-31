@@ -46,16 +46,20 @@ const winnerLogicArr = [
 for (let i = 0; i < boxes.length; i++) {
   boxes[i].addEventListener("click", () => {
     if (turnX) {
+      //add blue color for X
+      boxes[i].style.color = "blue";
       boxes[i].innerText = "X";
       turnX = false;
     } else {
+      //add red color for X
+      boxes[i].style.color = "red";
       boxes[i].innerText = "O";
       turnX = true;
     }
     boxes[i].disabled = true;
     count++;
-    checkWinner();
-    if (count == 9) {
+    let winning = checkWinner();
+    if (count === 9 && !winning) {
       gameDraw();
     }
   });
@@ -83,22 +87,27 @@ function resetGame() {
 function gameDraw() {
   msgContainer.classList.remove("hide");
   disableBoxes();
+  successMsg.style.color = "#ffffc7";
   successMsg.innerText = `This was a draw, Click on new game to start new game`;
 }
 
 function checkWinner() {
+  console.log(count);
   for (let i = 0; i < winnerLogicArr.length; i++) {
     let pos1Val = boxes[winnerLogicArr[i][0]].innerText;
     let pos2Val = boxes[winnerLogicArr[i][1]].innerText;
     let pos3Val = boxes[winnerLogicArr[i][2]].innerText;
-
     if (pos1Val != "" && pos2Val != "" && pos3Val != "") {
       if (pos1Val == pos2Val && pos2Val == pos3Val) {
+        //add success message according to the winner
+        if (pos1Val == "X") successMsg.style.color = "blue";
+        else if (pos1Val == "O") successMsg.style.color = "red";
         successMsg.innerText = `Congratulations, Winner is ${pos1Val}`;
         //Disable all boxes so that user cannot change the response
         disableBoxes();
         //remove  hide from msg-container hide
         msgContainer.classList.remove("hide");
+        return true;
       }
     }
   }
